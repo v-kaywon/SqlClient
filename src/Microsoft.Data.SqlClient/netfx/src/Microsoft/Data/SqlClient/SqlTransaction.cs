@@ -188,6 +188,11 @@ namespace Microsoft.Data.SqlClient
                 SqlInternalConnection.BestEffortCleanup(bestEffortCleanupTarget);
                 throw;
             }
+            catch (Exception e)
+            {
+                _connection.Abort(e);
+                throw;
+            }
             finally
             {
                 _isFromAPI = false;
