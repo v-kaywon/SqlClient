@@ -1042,7 +1042,7 @@ namespace Microsoft.Data.SqlClient
 
         internal void SetTimeoutSeconds(int timeout)
         {
-            SetTimeoutMilliseconds((long)timeout * 1L);
+            SetTimeoutMilliseconds((long)timeout * 1000L);
         }
 
         internal void SetTimeoutMilliseconds(long timeout)
